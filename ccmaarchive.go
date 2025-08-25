@@ -88,9 +88,9 @@ diff -u --label=original --label=modified <(echo "$2" | jq) <(echo "$1" | jq) ||
 
 		-- Exclude fields from JSON that are irrelevant for versioning
 		sanitized_new_data := NEW.data::JSONB
-			- 'audiencies' - 'publicitat' - 'youbora';
+			- 'audiencies' - 'publicitat' - 'youbora' - 'relacionats';
 		sanitized_previous_data := previous_data::JSONB
-			- 'audiencies' - 'publicitat' - 'youbora';
+			- 'audiencies' - 'publicitat' - 'youbora' - 'relacionats';
 
 		-- Check if there is no previous version (initial insert case)
 		IF previous_data IS NULL THEN
